@@ -46,7 +46,8 @@ except Exception as e:
     st.stop()
 
 # --- Similarity Threshold ---
-SIMILARITY_THRESHOLD = 0.70 # 70% similarity
+#SIMILARITY_THRESHOLD = 0.70 # 70% similarity
+SIMILARITY_THRESHOLD = 0.60 # 60% similarity
 
 # --- Initial Keyword Matrix (Hardcoded from Concept Note) ---
 initial_indicator_keywords = {
@@ -388,7 +389,7 @@ def display_detailed_results_nlp(all_analysis_results: List[Dict]):
             else:
                 st.write("No dimension coverage to display for this document.")
 
-            st.subheader("Matched Indicators and Similar Phrases (NLP)")
+            st.subheader(f"Matched Indicators and Similar Phrases (NLP) with {SIMILARITY_THRESHOLD} threshold")
             if result["matched_indicators_nlp"]:
                 data_nlp = []
                 for indicator, matches_list in result["matched_indicators_nlp"].items():
