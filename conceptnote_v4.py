@@ -32,6 +32,11 @@ import numpy as np
 # except LookupError:
 #     print("NLTK resource not found.")
 
+try:
+    nltk.download('all')
+except LookupError:
+    print("NLTK resource not found.")
+
 # --- Load Sentence Transformer Model (this will download the model on first run) ---
 # Using a lightweight and effective model
 try:
